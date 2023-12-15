@@ -2,20 +2,21 @@
 
 ## prerequisite
 * Only tested on MacOS.
-* Python3 has to be installed.
+* Python3 needed.
 
-## `.lldbinit`
-* you have to create `.lldbinit` file at your home directory if you do not have the file by `cd && touch .lldbinit`.
-* in the `.lldbinit`, add `command script import ~/PATH_Where_YOU_SAVE/t_list_utils.py`
+## .lldbinit
+* you have to have a `.lldbinit` file at your home directory. If you do not have the file then you can create by `cd && touch .lldbinit`.
+* in the `.lldbinit`, add `command script import ~/PATH_Where_YOU_SAVE/t_list_utils.py` with the path changed where you samve the `t_list_utils.py` file.
 
 ## command line argments
-this function accept 2 arguments as below.
+the function accepts 2 arguments as below.
 1. `-l`or`--list-head` for the name of head of t_list as you assigned. Default is `head`.
 2. `-n` or `--name` for a name of structure which your t_list's `(void *) content ` contains.
 
 ## Usage Example
 compile your code with `-g` flag and launch the `LLDB` with your executable.
-```SHELL
+```
+(SHELL)
 $ cc -g main.c libft.a
 $ lldb a.out
 (lldb) target create "a.out"
@@ -24,7 +25,8 @@ $ lldb a.out
 then, debug using `ptlist` custom command. 
 For instance, below the `ptlist --list-head head_of_tlist --name t_data` command debug t_list with head name as `head_of_tlist` and data structure called `t_data` with 2 member vars `_int & _str``
 
-```LLDB
+```
+(LLDB)
 (lldb) b main
 Breakpoint 1: where = a.out`main + 24 at main.c:50:18, address = 0x0000000100003c28
 (lldb) run
